@@ -7,7 +7,7 @@
  - Encapsulate the loaded model as a bean (Singleton pattern compliant).
  - Contoller injects the bean by @Autowired and provide serving service outwards.
 
-## Before depoy you should
+## Before deploy you should
  - Prepare a local spark environment or remote spark URL.
 
  - Specify the location of the model file. (e.g. Local disk/ hdfs/ S3)
