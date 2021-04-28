@@ -1,7 +1,7 @@
 
 # HousePricePrediction-ServingAPI
 
-## Main Idea
+## Main idea
 
  - Load the trained model into memory when it starts. 
  - Encapsulate the loaded model as a bean (Singleton pattern compliant).
