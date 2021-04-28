@@ -8,6 +8,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.DisposableBean;
 import org.springframework.beans.factory.InitializingBean;
+import org.springframework.beans.factory.annotation.Value;
 
 public class SparkContextBean implements InitializingBean, DisposableBean {
 	private static Logger log = LoggerFactory.getLogger(SparkContextBean.class);
@@ -18,11 +19,15 @@ public class SparkContextBean implements InitializingBean, DisposableBean {
 		return sparkContext;
 	}
 
+	@Value("${spark.context.master}")
+	private String sparkContextMaster;
+
 	@PostConstruct
 	public void init() {
 		log.info("JavaSparkContext init start...");
-		SparkConf conf = new SparkConf().setAppName("Main").setMaster("local[2]").set("spark.executor.memory", "3g")
-				.set("spark.driver.memory", "3g");
+		SparkConf conf = new SparkConf().setMaster(sparkContextMaster)
+				.setAppName("servingAPI").set("spark.executor.memory", "1g")
+				.set("spark.driver.memory", "1g");
 		sparkContext = new JavaSparkContext(conf);
 		log.info("JavaSparkContext init finish");
 	}

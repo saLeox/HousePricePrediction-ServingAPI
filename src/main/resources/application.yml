@@ -1,6 +1,14 @@
 server:
   port: 8081
 
+spark:
+  context:
+    master: local[2]
+
+model:
+  path:
+    decisionTree: D:\\Code\\Personal\\BigData-HousePricePrediction\\src\\main\\resources\\model\\DecisionTree
+
 spring:
   application:
     name: go5-serving
