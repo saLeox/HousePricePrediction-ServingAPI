@@ -1,4 +1,5 @@
 
+
 # HousePricePrediction-ServingAPI
 
 ## Main idea
@@ -9,8 +10,8 @@
 
 ## Before deploy you should
  - Prepare a local spark environment or remote spark URL.
-
  - Specify the location of the model file. (e.g. Local disk/ hdfs/ S3)
+ - Declare above two variables inside the [yml](https://github.com/saLeox/HousePricePrediction-ServingAPI/blob/main/src/main/resources/application.yml).
 
 ## After deploy you can
 
