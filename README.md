@@ -92,7 +92,7 @@
 	}
 	```
 
- 3. Implement the **initiate and destroy function** for the [SparkContextBean](https://github.com/saLeox/HousePricePrediction-ServingAPI/blob/main/src/main/java/go5/bigdata/init/SparkContextBean.java) since I/O issue
+ 3. Implement the **initiate and destroy function** for the [SparkContextBean](https://github.com/saLeox/HousePricePrediction-ServingAPI/blob/main/src/main/java/go5/bigdata/init/SparkContextBean.java) due to I/O connection issue with spark.
 
 	```
 	public class SparkContextBean implements InitializingBean, DisposableBean {
