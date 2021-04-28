@@ -6,7 +6,7 @@
 
  - Load the trained model into memory when it starts. 
  - Encapsulate the loaded model as a bean (Singleton pattern compliant).
- - Contoller injects the bean by @Autowired and provide serving service outwards.
+ - Controller injects the bean by @Autowired and provide serving service outwards.
 
 ## Before deploy you should
  - Prepare a local spark environment or remote spark URL.
@@ -23,7 +23,7 @@
  1. Have to solve the dependent confict between Spark and SpringBoot
     because of the Logging Factory.
 
-	 - 1.1. Exlude the slf4j-log4j12 and log4j out of spark.
+	 - 1.1. Exlude the slf4j-log4j12.jar and log4j.jar out of spark.
 		```
 		<dependency>
 		    <groupId>org.apache.spark</groupId>
@@ -43,7 +43,7 @@
 		</dependency>
 		```
 		
-	 - 1.2. Exlude the logging out of spring-boot-starter-web.
+	 - 1.2. Exlude the logging.jar out of spring-boot-starter-web.
 		```
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -56,7 +56,7 @@
 		    </exclusions>
 		</dependency>
 		```
-	 - 1.3. Import the needed logging jar.
+	 - 1.3. Import the needed logging relevant jar.
 		```
 		<dependency>
 		    <groupId>org.slf4j</groupId>
