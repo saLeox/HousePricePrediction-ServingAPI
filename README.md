@@ -1,5 +1,6 @@
 
 
+
 # HousePricePrediction-ServingAPI
 
 ## Main idea
@@ -17,6 +18,7 @@
 
  - View the API at [online API page](http://localhost:8081/swagger-ui/index.html#/). 
 -  Fill in the parameters one by one into the double array, then you can get the predicted value.
+- Switch to other machine learning models that we train [before](https://github.com/saLeox/HousePricePrediction-BatchTraining/tree/main/src/main/java/gof5/spark/regression/strategy). Then deploy again.
 
 ## Implementation roadmap
 
