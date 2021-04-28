@@ -74,5 +74,38 @@
 				</dependency>
 		```
 
- 2. Define two beans inside the [configuration](https://github.com/saLeox/HousePricePrediction-ServingAPI/blob/main/src/main/java/go5/bigdata/init/ModelConfiguration.java): one for SparkContext, another for specific model.
+ 2. Define two Java **Beans** inside the [configuration](https://github.com/saLeox/HousePricePrediction-ServingAPI/blob/main/src/main/java/go5/bigdata/init/ModelConfiguration.java): one for SparkContext, another for specific model.
+
+	```
+	@Configuration
+	public class ModelConfiguration {
+		@Bean(value = "sparkContext")
+		public SparkContextBean sparkContext() {
+			...
+		}
+		@Bean("decisionTreeModel")
+		@ConditionalOnBean(SparkContextBean.class)
+		public DecisionTreeModel decisionTreeModel(SparkContextBean bean) {
+			...
+		}
+	}
+	```
+
  3. Implement the **initiate and destroy function** for the [SparkContextBean](https://github.com/saLeox/HousePricePrediction-ServingAPI/blob/main/src/main/java/go5/bigdata/init/SparkContextBean.java) since I/O issue
+
+	```
+	public class SparkContextBean implements InitializingBean, DisposableBean {
+		@PostConstruct
+		public void init() {
+			...
+		}
+		@Override
+		public void destroy() throws Exception {
+			...
+		}
+		@Override
+		public void afterPropertiesSet() throws Exception {
+			...
+		}
+	}
+	```
